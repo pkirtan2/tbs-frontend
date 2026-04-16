@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us - Trustellar</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* Base */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #eef6fb;
+}
+
+.navbar {
+  background: white;
+  padding: 15px 0;
+}
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 2px 0;
+  transition: 0.3s;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Shadow on scroll */
+.custom-navbar.scrolled {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Nav links */
+.nav-link {
+  position: relative;
+  margin: 0 12px;
+  font-weight: 500;
+  color: #333 !important;
+  transition: 0.3s;
+}
+
+/* Underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+  transition: 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Hover color */
+.nav-link:hover {
+  color: #28a745 !important;
+}
+/* Logo spacing */
+.logo-img {
+  height: 85px;
+}
+
+/* Logo */
+.logo-img {
+  height: 90px;        /* increase size */
+  width: auto;         /* keep proportion */
+  object-fit: contain; /* no distortion */
+  
+}
+
+.brand-text {
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+
+  background-clip: text;              /* standard */
+  -webkit-background-clip: text;      /* chrome/safari */
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Nav */
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn-main {
+  background: linear-gradient(45deg, #28a745, #17a2b8);
+  color: white;
+  border-radius: 30px;
+  padding: 12px 25px;
+}
+
+/* ===== HERO ABOUT ===== */
+.about-hero {
+padding: 50px 0 30px;
+  text-align: center;
+  background: transparent;
+}
+
+.about-hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+}
+.about-hero {
+  margin-top: 90px;
+}
+.about-hero p {
+  color: #666;
+  margin-top: 10px;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-section {
+  padding: 50px 0;
+}
+
+/* Left Text */
+.about-text h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.about-text p {
+  color: #666;
+  line-height: 1.7;
+}
+.about-section p {
+  text-align: justify;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+.core-values {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.core-values h2 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.core-values p {
+  text-align: justify;
+  color: #555;
+}
+
+/* Cards (Mission/Vision) */
+.about-box {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 18px;
+  margin-top: 30px;
+  transition: 0.4s;
+  border: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+}
+.history-box {
+  margin-top: 100px; /* 🔥 only this card moves down */
+}
+
+/* Gradient border top */
+.about-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+  border-radius: 10px;
+}
+
+/* Hover */
+.about-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Icon */
+.about-box i {
+  font-size: 20px;
+  color: #28a745;
+  margin-right: 8px;
+}
+
+/* Image */
+.about-img {
+  margin-top: -100px; /* 🔥 moves whole image block up */
+}
+
+.about-img img {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  transition: 0.4s;
+}
+
+.about-img img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .about-hero h1 {
+    font-size: 30px;
+  }
+}
+/* Section */
+#trustellar-values {
+  background: #eef6fb;
+  padding: 80px 0;
+}
+
+
+/* Footer */
+.footer {
+  background: #0d0d0d;
+  color: #ccc;
+  padding: 70px 0 30px;
+}
+/* Titles */
+.footer-title {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+/* Text */
+.footer-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+/* Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #28a745;
+  padding-left: 5px;
+}
+
+/* Social Icons */
+.footer-social a {
+  display: inline-block;
+  margin-right: 12px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background: #1a1a1a;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  background: linear-gradient(45deg, #28a745, #ff9800);
+  transform: translateY(-3px);
+}
+
+/* Contact */
+.footer-contact {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;   /* 🔥 keeps all icons in one row */
+}
+/* Divider */
+.footer hr {
+  border-color: rgba(255,255,255,0.1);
+  margin: 30px 0;
+}
+/* Office Items */
+.office-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Icons */
+.office-item i {
+  font-size: 22px;
+  color: #28a745;
+  margin-top: 5px;
+}
+
+/* Text */
+.office-item strong {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+}
+
+.office-item p {
+  margin: 0;
+  font-size: 13px;
+  color: #bbb;
+}
+
+/* Hover */
+.office-item:hover {
+  transform: translateX(5px);
+  transition: 0.3s;
+}
+
+
+.footer .col-md-3 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* Section */
+.values-modern {
+  background: linear-gradient(135deg, #eef6fb, #e3f2fd);
+  padding: 100px 0;
+  text-align: center;
+}
+
+/* Title */
+.values-modern h2 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.values-modern p {
+  color: #666;
+}
+
+/* Card */
+.values-modern .bg-white {
+  background: rgba(255,255,255,0.7) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  transition: 0.4s;
+  border: 1px solid rgba(255,255,255,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top gradient line */
+.values-modern .bg-white::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 60px;
+  height: 4px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #28a745, #17a2b8);
+}
+
+/* Hover effect */
+.values-modern .value-card  {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+/* Icon */
+
+
+.values-modern i {
+  font-size: 42px;
+  background: linear-gradient(45deg, #28a745, #17a2b8, #ff9800);
+  background-clip: text;              /* standard */
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  transition: 0.3s;
+}
+
+
+/* Icon hover animation */
+.values-modern .value-card i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Text */
+.values-modern h5 {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.values-modern p.small {
+  font-size: 14px;
+  color: #666;
+}
+.value-card p {
+  text-align: center;
+  line-height: 1.7;
+  font-size: 14px;
+}
+.values-modern .value-card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  transition: 0.4s;
+  border: 1px solid rgba(255,255,255,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .values-modern h2 {
+    font-size: 28px;
+  }
+}
+/* TEAM SECTION */
+.team-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8fbff, #eef6fb);
+}
+
+/* Title */
+.team-title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.team-sub {
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Card */
+.team-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.4s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Image */
+.team-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+/* Info */
+.team-info {
+  padding: 20px;
+}
+
+.team-info h5 {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.team-info p {
+  color: #777;
+  font-size: 14px;
+}
+
+/* Hover Effect */
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.team-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .team-title {
+    font-size: 28px;
+  }
+}
+/* Bottom */
+.footer-bottom {
+  font-size: 13px;
+  color: #888;
+}
+.footer {
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+}
+/* Scroll animation */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+/* When visible */
+.scroll-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scroll-animate:nth-child(1) { transition-delay: 0.1s; }
+.scroll-animate:nth-child(2) { transition-delay: 0.2s; }
+.scroll-animate:nth-child(3) { transition-delay: 0.3s; }
+/* Enable 3D feel */
+.parallax-section {
+  perspective: 1000px;
+}
+
+/* Smooth movement */
+.parallax {
+  transition: transform 0.2s linear;
+  will-change: transform;
+}
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-content {
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+/* Section Title */
+.section-title h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1f3b4d;
+}
+
+/* Line */
+.title-line {
+  position: relative;
+  width: 120px;
+  height: 6px;
+  background: #d4f5dd;
+  margin: 12px auto 10px;
+  border-radius: 10px;
+}
+
+
+
+.title-line span {
+  animation: pulse 1.5s infinite;
+}
+/* Line */
+.title-line {
+  position: relative;
+  width: 120px;
+  height: 5px;
+  background: #d4f5dd;
+  margin: 15px auto 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Moving dot */
+.title-line span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  
+  width: 12px;      /* SAME width & height */
+  height: 12px;
+
+  background:  linear-gradient(45deg, #28a745, #17a2b8);
+  border-radius: 50%;  /* 🔥 THIS MAKES IT CIRCLE */
+
+  transform: translateY(-50%);
+  animation: moveDot 2s linear infinite;
+}
+.core-line {
+  margin: 12px auto 25px; /* top + bottom spacing */
+}
+
+
+/* Animation */
+@keyframes moveDot {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+    transform: translate(-100%, -50%);
+  }
+}
+.tilt-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 35px 25px;
+  position: relative;
+  transition: 0.3s ease;
+  overflow: hidden;
+
+  /* Gradient Border */
+  border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(45deg, #28a745, #ff9800) border-box;
+
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Top gradient line */
+
+
+/* Content pops out */
+.tilt-card i,
+.tilt-card h5,
+.tilt-card p {
+  transform: translateZ(20px);
+}
+
+/* Shadow */
+.tilt-card:hover {
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+/* Floating Shapes */
+.floating-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; /* 🔥 increase */
+}
+
+/* Base shape */
+.shape {
+  position: absolute;
+  opacity: 0.4;
+  animation: float 10s infinite ease-in-out;
+}
+
+/* Circle */
+.circle {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #ff7e5f, #feb47b);
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+}
+
+/* Cross */
+.cross {
+  width: 30px;
+  height: 30px;
+  top: 40%;
+  left: 30%;
+}
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  background: #00c9a7;
+}
+.cross::before {
+  width: 100%;
+  height: 3px;
+  top: 50%;
+}
+.cross::after {
+  height: 100%;
+  width: 3px;
+  left: 50%;
+}
+
+/* Triangle */
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid #00e676;
+  top: 20%;
+  right: 20%;
+}
+
+/* Ring */
+.ring {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #ccc;
+  border-radius: 50%;
+  bottom: 20%;
+  left: 50%;
+}
+/* Square */
+.shape.square {
+  width: 20px;
+  height: 20px;
+  background: #28a745;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  animation: float 8s infinite ease-in-out;
+}
+
+/* Diamond */
+.shape.diamond {
+  width: 20px;
+  height: 20px;
+  background: #17a2b8;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  animation: float 7s infinite ease-in-out;
+}
+
+/* Dot */
+.shape.dot {
+  width: 10px;
+  height: 10px;
+  background: #ffc107;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  animation: float 6s infinite ease-in-out;
+}
+
+/* Small Circle */
+.shape.small-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #6f42c1;
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  animation: float 9s infinite ease-in-out;
+}
+
+/* Plus */
+.shape.plus {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  font-size: 20px;
+  color: #20c997;
+  animation: float 8s infinite ease-in-out;
+}
+
+.shape.plus::before {
+  content: "+";
+}
+
+/* Zigzag */
+.shape.zigzag {
+  width: 30px;
+  height: 10px;
+  border-bottom: 3px solid #fd7e14;
+  transform: skewX(-30deg);
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  animation: float 10s infinite ease-in-out;
+}
+/* Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }
+}
+
+body {
+  position: relative;
+  z-index: 1;
+}
+
+section, .container, .navbar {
+  position: relative;
+  z-index: 2;
+}
+.floating-shapes {
+  z-index: 0;
+}
+
+body > *:not(.floating-shapes) {
+  position: relative;
+  z-index: 1;
+}
+.shape {
+  opacity: 0.6; /* increase */
+}
+/* ===== PREMIUM TEAM FLIP ===== */
+
+.team-card {
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+/* INNER */
+.team-inner {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* CLICK FLIP */
+.team-card.flip .team-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT + BACK */
+.team-front,
+.team-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+/* ===== GLASS EFFECT ===== */
+.team-front,
+.team-back {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* FRONT IMAGE */
+.team-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BACK */
+/* CLEAN PROFESSIONAL BACK */
+.team-back {
+  transform: rotateY(180deg);
+  background: rgba(20, 25, 40, 0.85);
+  backdrop-filter: blur(16px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ===== GLOW BORDER ===== */
+.team-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #38bdf8, #6366f1);
+  opacity: 0.2;
+}
+
+@keyframes borderGlow {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* ===== HOVER GLOW ===== */
+.team-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+}
+
+/* TEXT */
+.team-back h5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.team-back p {
+  font-size: 14px;
+  color: #cbd5e1; /* soft gray */
+}
+.team-back p:nth-child(3) {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: 8px;
+}
+
+/* SOCIAL */
+.team-social i {
+  margin: 10px;
+  font-size: 16px;
+  color: #cbd5e1;
+  transition: 0.3s;
+}
+
+.team-social i:hover {
+  color: #38bdf8; /* subtle blue */
+  transform: scale(1.2);
+}
+.team-card:hover .team-inner {
+  transform: rotateY(180deg);
+}
+
+
+</style>
+
+</head>
+<body>
+ <!-- 🔥 FLOATING SHAPES (ADD HERE) -->
+<div class="floating-shapes">
+  <span class="shape circle"></span>
+  <span class="shape cross"></span>
+  <span class="shape triangle"></span>
+  <span class="shape ring"></span>
+  <span class="shape square"></span>
+  <span class="shape diamond"></span>
+  <span class="shape zigzag"></span>
+  <span class="shape dot"></span>
+  <span class="shape plus"></span>
+  <span class="shape small-circle"></span>
+</div>
+<!-- NAVBAR -->
+ 
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="image.png" class="logo-img" alt="logo">
+     
+    </a>
+
+    <!-- Toggle -->
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto text-center">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="about.html">About Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="services.html">Services</a>
+        </li>
+       
+
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+         
+          
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero parallax-section">
+  <div class="container">
+    <div class="parallax-content" data-speed="0.4">
+
+      <h1>About Trustellar</h1>
+       <div class="title-line">
+        <span></span>
+      </div>
+      <p>Trusted & Secure Business Solutions for modern enterprises</p>
+
+      
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section scroll-animate parallax-section">
+  <div class="container">
+
+    <div class="row g-5 align-items-center">
+
+      <!-- LEFT -->
+      <div class="col-md-6 about-text parallax" data-speed="0.3">
+
+        <h4>Who We Are</h4>
+        <p>
+          Trustellar Business Solutions is a forward-thinking IT company committed to delivering innovative, scalable, and secure digital solutions.
+          We help businesses transform their ideas into powerful digital products by combining cutting-edge technologies with strategic thinking.
+          Our expertise spans across web development, mobile applications, cloud computing, and digital marketing. We work with startups,small businesses, and enterprises to build solutions that are not only functional but also future-ready.
+          With a strong focus on quality, performance, and user experience, we ensure that every project we deliver drivesreal business valueand long-term growth.
+        </p>
+
+        <!-- Mission -->
+        <div class="about-box parallax" data-speed="0.4">
+          <h5><i class="fas fa-bullseye"></i> Our Mission</h5>
+          <p>
+           Our mission is to empower businesses with smart, efficient, and innovative technology solutions that enhance productivity and accelerate growth. 
+           We strive to bridge the gap between business challenges and digital opportunities by delivering customized solutions tailored to each client’s needs.
+           We are dedicated to building long-term partnerships with our clients by providing reliable services, continuous support, and measurable results. 
+           Our goal is to help organizations succeed in an ever-evolving digital world.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="about-box parallax" data-speed="0.4">
+          <h5><i class="fas fa-eye"></i> Our Vision</h5>
+          <p>
+           Our vision is to become a globally recognized IT solutions provider known for innovation, reliability, and excellence. 
+           We aim to lead digital transformation by continuously evolving with new technologies and industry trends.
+           We envision a future where businesses of all sizes can leverage advanced technology to achieve their full potential, 
+           and we strive to be the trusted partner that makes this transformation possible.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-md-6 parallax" data-speed="0.3">
+
+  <!-- IMAGE -->
+  <div class="about-img mb-4">
+    <img src="https://img.freepik.com/free-photo/business-team-meeting_53876-15180.jpg" class="img-fluid">
+  </div>
+
+  <!-- OUR HISTORY (BELOW IMAGE) -->
+  <div class="about-box history-box">
+    <h5>
+      <i class="fas fa-history about-box-icon"></i>
+      Our History
+    </h5>
+
+    
+<p>
+At Trustellar Business Solutions, we have been delivering innovative IT solutions since October 2025.
+
+In this short span, we have collaborated with clients across industries such as finance, retail, e-commerce, and digital services. Our growing experience enables us to understand modern business needs and deliver scalable, reliable, and result-driven solutions.
+
+We focus on building smart, technology-driven systems that help businesses streamline operations, enhance customer experience, and accelerate growth in today’s competitive digital landscape.
+</p>
+    
+  </div>
+
+</div>
+</section>
+  <section class="values-modern scroll-animate">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Our Core Values</h2>
+      <div class="title-line core-line"><span></span></div>
+      <p class="text-muted">
+        The principles that drive Trustellar Business Solutions
+      </p>
+    </div>
+
+   <div class="row g-4 text-center">
+
+  <!-- Value 1 -->
+  <div class="col-lg-3 col-md-6">
+  <div class="tilt-card p-4 h-100 text-center">
+
+    <div class="mb-3 text-success fs-1">
+      <i class="fas fa-bullseye"></i>
+    </div>
+
+    <h5 class="fw-semibold">Innovation</h5>
+
+    <p class="text-muted small">
+      We leverage modern technologies to build innovative solutions that help businesses stay ahead in a competitive digital world.
+    </p>
+
+  </div>
+</div>
+
+  <!-- Value 2 -->
+  <div class="col-lg-3 col-md-6">
+  <div class="tilt-card p-4 h-100 text-center">
+
+    <div class="mb-3 text-primary fs-1">
+      <i class="fas fa-users"></i>
+    </div>
+
+    <h5 class="fw-semibold">Customer First</h5>
+
+    <p class="text-muted small">
+      Your success is our priority. We focus on understanding your needs and delivering solutions that create real business value.
+    </p>
+
+  </div>
+</div>
+
+  <!-- Value 3 -->
+  <div class="col-lg-3 col-md-6">
+  <div class="tilt-card p-4 h-100 text-center">
+
+    <div class="mb-3 text-warning fs-1">
+      <i class="fas fa-star"></i>
+    </div>
+
+    <h5 class="fw-semibold">Excellence</h5>
+
+    <p class="text-muted small">
+      We are committed to delivering high-quality services with precision, performance, and continuous improvement.
+    </p>
+
+  </div>
+</div>
+
+  <!-- Value 4 -->
+  <div class="col-lg-3 col-md-6">
+  <div class="tilt-card p-4 h-100 text-center">
+
+    <div class="mb-3 text-info fs-1">
+      <i class="fas fa-shield-alt"></i>
+    </div>
+
+    <h5 class="fw-semibold">Security & Reliability</h5>
+
+    <p class="text-muted small">
+      We ensure secure, scalable, and reliable solutions that protect your data and keep your business running smoothly.
+    </p>
+
+  </div>
+</div>
+
+</div>
+</section>
+  <section class="team-section scroll-animate">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="team-title">Meet Our Core Experts</h2>
+      <div class="title-line expert-line"><span></span></div>
+      <p class="team-sub">Dedicated professionals driving innovation and success</p>
+    </div>
+
+    <div class="row g-4 justify-content-center text-center">
+      <!-- Member 1 -->
+      <div class="col-lg-3 col-md-6">
+  <div class="team-card">
+    <div class="team-inner">
+
+      <!-- FRONT -->
+      <div class="team-front">
+        <img src="photo.png" alt="">
+      </div>
+
+      <!-- BACK -->
+      <div class="team-back">
+        <div>
+          <h5>Pankaj Nankani</h5>
+          <p>Founder & CEO</p>
+
+          <p>
+           Experienced in building scalable solutions and leading business growth. Focused on delivering reliable and efficient technology for modern businesses.
+          </p>
+
+          <div class="team-social">
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-github"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+     <!-- Member 2 -->
+<div class="col-lg-3 col-md-6">
+  <div class="team-card">
+    <div class="team-inner">
+
+      <!-- FRONT -->
+      <div class="team-front">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+      </div>
+
+      <!-- BACK -->
+      <div class="team-back">
+        <div>
+          <h5>Priya Shah</h5>
+          <p>UI/UX Designer</p>
+
+          <p>
+            Creates intuitive, modern, and user-focused designs that improve user experience and conversions.
+          </p>
+
+          <div class="team-social">
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-dribbble"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <!-- Member 3 -->
+<div class="col-lg-3 col-md-6">
+  <div class="team-card">
+    <div class="team-inner">
+
+      <!-- FRONT -->
+      <div class="team-front">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="">
+      </div>
+
+      <!-- BACK -->
+      <div class="team-back">
+        <div>
+          <h5>Amit Mehta</h5>
+          <p>Cloud Engineer</p>
+
+          <p>
+            Expert in cloud infrastructure, AWS, and DevOps automation for scalable systems.
+          </p>
+
+          <div class="team-social">
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-aws"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <!-- Member 4 -->
+<div class="col-lg-3 col-md-6">
+  <div class="team-card">
+    <div class="team-inner">
+
+      <!-- FRONT -->
+      <div class="team-front">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="">
+      </div>
+
+      <!-- BACK -->
+      <div class="team-back">
+        <div>
+          <h5>Neha Verma</h5>
+          <p>Digital Marketing Expert</p>
+
+          <p>
+            Specializes in SEO, paid ads, and growth strategies to boost brand visibility and conversions.
+          </p>
+
+          <div class="team-social">
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- MEMBER 5 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <div class="team-inner">
+            <div class="team-front">
+              <img src="https://randomuser.me/api/portraits/men/55.jpg">
+            </div>
+            <div class="team-back">
+              <div>
+                <h5>Arjun Desai</h5>
+                <p>Backend Developer</p>
+                <p>Node.js & database expert.</p>
+                <div class="team-social">
+                  <i class="fab fa-linkedin"></i>
+                  <i class="fab fa-github"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- MEMBER 6 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <div class="team-inner">
+            <div class="team-front">
+              <img src="https://randomuser.me/api/portraits/women/52.jpg">
+            </div>
+            <div class="team-back">
+              <div>
+                <h5>Sneha Patel</h5>
+                <p>UI Designer</p>
+                <p>Focus on modern UI & UX.</p>
+                <div class="team-social">
+                  <i class="fab fa-linkedin"></i>
+                  <i class="fab fa-dribbble"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- MEMBER 7 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <div class="team-inner">
+            <div class="team-front">
+              <img src="https://randomuser.me/api/portraits/men/77.jpg">
+            </div>
+            <div class="team-back">
+              <div>
+                <h5>Rohit Sharma</h5>
+                <p>SEO Specialist</p>
+                <p>Boosts rankings and organic growth.</p>
+                <div class="team-social">
+                  <i class="fab fa-linkedin"></i>
+                  <i class="fab fa-google"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="https://randomuser.me/api/portraits/women/33.jpg">
+      </div>
+      <div class="team-back">
+        <div>
+          <h5>Kavya Joshi</h5>
+          <p>Project Manager</p>
+          <p>Ensures smooth project delivery and team coordination.</p>
+
+          <div class="team-social">
+            <i class="fab fa-linkedin"></i>
+            <i class="fas fa-tasks"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+</section>
+<footer class="footer">
+  <div class="container">
+
+    <div class="row text-center text-md-start">
+
+  <!-- Company -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <h5 class="footer-title">Trustellar</h5>
+    <p class="footer-text">
+      Providing trusted and secure business solutions with modern IT services 
+      to help your business grow and succeed in the digital world.
+    </p>
+  </div>
+
+  <!-- Quick Links -->
+ <div class="col-lg-3 col-md-6 mb-4">
+  <h5 class="footer-title">Quick Links</h5>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</div>
+
+  <!-- 🔥 Our Offices (MOVED HERE) -->
+ <div class="col-lg-3 col-md-6 mb-4">
+    <h5 class="footer-title">Our Offices</h5>
+
+    <div class="office-item">
+      <i class="fas fa-building"></i>
+      <div>
+        <strong>Head Office</strong>
+        <p>Anand, Gujarat, India</p>
+      </div>
+    </div>
+
+    <div class="office-item mt-3">
+      <i class="fas fa-city"></i>
+      <div>
+        <strong>Regional Office</strong>
+        <p>Ahmedabad, Gujarat, India</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Connect -->
+ <div class="col-lg-3 col-md-6 mb-4">
+    <h5 class="footer-title">Connect With Us</h5>
+
+    <div class="footer-social">
+      <a href="https://www.facebook.com/people/Trustellar-Business-Solutions/61576449705542/" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+   
+      <a href="https://www.instagram.com/trustellarbusiness_solutions/" target="_blank">
+  <i class="fab fa-instagram"></i>
+</a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+       <a href="mailto:info@trustellar.com">
+    <i class="fas fa-envelope"></i>
+  </a>
+    </div>
+
+    <p class="footer-contact mt-3">Info@trustellar-services.com</p>
+  </div>
+
+</div>
+
+    <hr>
+
+    <!-- Bottom -->
+    <div class="text-center footer-bottom">
+      © 2026 Trustellar Business Solutions. All Rights Reserved
+    </div>
+
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const elements = document.querySelectorAll(".scroll-animate");
+
+function revealOnScroll() {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (top < windowHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+<script>
+const parallaxContent = document.querySelector(".parallax-content");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+
+  if (parallaxContent) {
+    const speed = parallaxContent.getAttribute("data-speed");
+    parallaxContent.style.transform = `translateY(${scrollY * speed * 0.2}px)`;
+  }
+});
+</script>
+<script>
+const cards = document.querySelectorAll(".tilt-card");
+
+cards.forEach(card => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = -(y - centerY) / 12;
+    const rotateY = (x - centerX) / 12;
+
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.03)
+    `;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(0deg)
+      rotateY(0deg)
+      scale(1)
+    `;
+  });
+});</script>
+</body>
+</html>

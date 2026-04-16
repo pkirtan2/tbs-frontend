@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our services - Trustellar</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* Base */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #eef6fb;
+}
+
+
+.navbar {
+  background: white;
+  padding: 15px 0;
+}
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 2px 0;
+  transition: 0.3s;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Shadow on scroll */
+.custom-navbar.scrolled {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Nav links */
+.nav-link {
+  position: relative;
+  margin: 0 12px;
+  font-weight: 500;
+  color: #333 !important;
+  transition: 0.3s;
+}
+
+/* Underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+  transition: 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Hover color */
+.nav-link:hover {
+  color: #28a745 !important;
+}
+/* Logo spacing */
+.logo-img {
+  height: 85px;
+}
+
+/* Logo */
+.logo-img {
+  height: 90px;        /* increase size */
+  width: auto;         /* keep proportion */
+  object-fit: contain; /* no distortion */
+}
+
+.brand-text {
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+
+  background-clip: text;              /* standard */
+  -webkit-background-clip: text;      /* chrome/safari */
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: #777;
+}
+
+
+
+
+
+/* Nav */
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn-main {
+  background: linear-gradient(45deg, #28a745, #17a2b8);
+  color: white;
+  border-radius: 30px;
+  padding: 12px 25px;
+}
+
+
+/* Services */
+#services {
+  padding: 100px 0;
+}
+#services h2 {
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+.service-card {
+  background: #ffffff;
+  padding: 35px 28px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.4s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  position: relative;
+  height: 100%;
+}
+
+/* FIXED LINE */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+}
+
+.service-icon {
+  font-size: 42px;
+  margin-bottom: 18px;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+  background-clip: text;              /* standard */
+  -webkit-background-clip: text;      /* chrome/safari */
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.service-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.service-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+.service-card:hover::before {
+  width: 80px;
+}
+.row.g-4 > div {
+  display: flex;
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.service-card:hover {
+  border: 1px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(45deg, #28a745, #ff9800) border-box;
+}
+
+/* Section */
+.why-section {
+  padding: 100px 0;
+  background: #f4f9fc;
+}
+
+/* Title */
+.why-title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.why-subtitle {
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Card */
+.why-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 20px;
+  text-align: left;
+  transition: 0.4s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  height: 100%;
+  position: relative;
+}
+
+/* Icon */
+.why-icon {
+  font-size: 35px;
+  margin-bottom: 15px;
+  color: #17a2b8;
+}
+
+/* Title */
+.why-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.why-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Hover Effect */
+.why-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Top gradient line */
+.why-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+  border-radius: 10px;
+}
+.why-card:hover .why-icon {
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+.service-hero {
+  padding: 100px 0 60px;
+  text-align: center;
+  background: linear-gradient(135deg, #e6f7ff, #fdfdfd);
+}
+
+.service-hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  padding-top: 70px;
+}
+
+.service-hero {
+  padding: 100px 0 80px;
+}
+
+.service-hero p {
+  color: #666;
+  margin-top: 10px;
+}
+.services-section {
+  margin-top: 70px;     /* 👈 ADD THIS */
+  margin-bottom: 80px;
+}
+
+.footer {
+  background: #0d0d0d;
+  color: #ccc;
+  padding: 70px 0 30px;
+}
+/* Titles */
+.footer-title {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+/* Text */
+.footer-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+/* Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #28a745;
+  padding-left: 5px;
+}
+/* Office Items */
+.office-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Icons */
+.office-item i {
+  font-size: 22px;
+  color: #28a745;
+  margin-top: 5px;
+}
+
+/* Text */
+.office-item strong {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+}
+
+.office-item p {
+  margin: 0;
+  font-size: 13px;
+  color: #bbb;
+}
+
+/* Hover */
+.office-item:hover {
+  transform: translateX(5px);
+  transition: 0.3s;
+}
+/* Social Icons */
+.footer-social a {
+  display: inline-block;
+  margin-right: 12px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background: #1a1a1a;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  background: linear-gradient(45deg, #28a745, #ff9800);
+  transform: translateY(-3px);
+}
+
+/* Contact */
+.footer-contact {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;   /* 🔥 keeps all icons in one row */
+}
+
+/* Divider */
+.footer hr {
+  border-color: rgba(255,255,255,0.1);
+  margin: 30px 0;
+}
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media(min-width: 992px){
+  .footer .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+/* Bottom */
+.footer-bottom {
+  font-size: 13px;
+  color: #888;
+}
+.footer {
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+}
+.services-section {
+  margin-bottom: 80px;
+}
+/* Line */
+.title-line {
+  position: relative;
+  width: 120px;
+  height: 6px;
+  background: #d4f5dd;
+  margin: 12px auto 10px;
+  border-radius: 10px;
+}
+
+
+
+.title-line span {
+  animation: pulse 1.5s infinite;
+}
+/* Line */
+.title-line {
+  position: relative;
+  width: 120px;
+  height: 5px;
+  background: #d4f5dd;
+  margin: 15px auto 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Moving dot */
+.title-line span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  
+  width: 12px;      /* SAME width & height */
+  height: 12px;
+
+  background:  linear-gradient(45deg, #28a745, #17a2b8);
+  border-radius: 50%;  /* 🔥 THIS MAKES IT CIRCLE */
+
+  transform: translateY(-50%);
+  animation: moveDot 2s linear infinite;
+}
+
+
+/* Animation */
+@keyframes moveDot {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+    transform: translate(-100%, -50%);
+  }
+}
+.service-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* 🔥 Hover zoom */
+.service-card:hover {
+  transform: scale(1.08);
+  z-index: 10;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+}
+.tilt-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 35px 25px;
+  position: relative;
+  transition: 0.3s ease;
+  overflow: hidden;
+
+  /* Gradient Border */
+  border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(45deg, #28a745, #ff9800) border-box;
+
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Top gradient line */
+
+
+/* Content pops out */
+.tilt-card i,
+.tilt-card h5,
+.tilt-card p {
+  transform: translateZ(20px);
+}
+
+/* Shadow */
+.tilt-card:hover {
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+/* Floating Shapes */
+.floating-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; /* 🔥 increase */
+}
+
+/* Base shape */
+.shape {
+  position: absolute;
+  opacity: 0.4;
+  animation: float 10s infinite ease-in-out;
+}
+
+/* Circle */
+.circle {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #ff7e5f, #feb47b);
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+}
+
+/* Cross */
+.cross {
+  width: 30px;
+  height: 30px;
+  top: 40%;
+  left: 30%;
+}
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  background: #00c9a7;
+}
+.cross::before {
+  width: 100%;
+  height: 3px;
+  top: 50%;
+}
+.cross::after {
+  height: 100%;
+  width: 3px;
+  left: 50%;
+}
+
+/* Triangle */
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid #00e676;
+  top: 20%;
+  right: 20%;
+}
+
+/* Ring */
+.ring {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #ccc;
+  border-radius: 50%;
+  bottom: 20%;
+  left: 50%;
+}
+/* Square */
+.shape.square {
+  width: 20px;
+  height: 20px;
+  background: #28a745;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  animation: float 8s infinite ease-in-out;
+}
+
+/* Diamond */
+.shape.diamond {
+  width: 20px;
+  height: 20px;
+  background: #17a2b8;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  animation: float 7s infinite ease-in-out;
+}
+
+/* Dot */
+.shape.dot {
+  width: 10px;
+  height: 10px;
+  background: #ffc107;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  animation: float 6s infinite ease-in-out;
+}
+
+/* Small Circle */
+.shape.small-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #6f42c1;
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  animation: float 9s infinite ease-in-out;
+}
+
+/* Plus */
+.shape.plus {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  font-size: 20px;
+  color: #20c997;
+  animation: float 8s infinite ease-in-out;
+}
+
+.shape.plus::before {
+  content: "+";
+}
+
+/* Zigzag */
+.shape.zigzag {
+  width: 30px;
+  height: 10px;
+  border-bottom: 3px solid #fd7e14;
+  transform: skewX(-30deg);
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  animation: float 10s infinite ease-in-out;
+}
+/* Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="floating-shapes">
+  <span class="shape circle"></span>
+  <span class="shape cross"></span>
+  <span class="shape triangle"></span>
+  <span class="shape ring"></span>
+  <span class="shape square"></span>
+  <span class="shape diamond"></span>
+  <span class="shape zigzag"></span>
+  <span class="shape dot"></span>
+  <span class="shape plus"></span>
+  <span class="shape small-circle"></span>
+</div>
+
+<!-- NAVBAR -->
+ 
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="image.png" class="logo-img" alt="logo">
+     
+    </a>
+
+    <!-- Toggle -->
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto text-center">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="services.html">Services</a>
+        </li>
+       
+
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+         
+          
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="service-hero">
+  <div class="container">
+    <h1>Our Services</h1>
+     <div class="title-line">
+        <span></span>
+      </div>
+    <p>Smart IT solutions tailored for your business growth</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="container">
+    
+
+    <div class="row g-4">
+
+      <!-- Web -->
+      <div class="col-md-4">
+       
+  <div class="service-card tilt-card">
+
+    <lottie-player 
+  src="https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json"
+  background="transparent"
+  speed="1"
+  style="width: 90px; height: 90px; margin:auto;"
+  loop
+  autoplay>
+</lottie-player>
+    <h5>Web Development</h5>
+    <p>
+      We build fast, responsive, and SEO-friendly websites using modern technologies like React, Node.js, and Bootstrap to help your business grow online.
+    </p>
+
+  </div>
+</div>
+
+      <!-- Mobile -->
+      <div class="col-md-4">
+     
+       <div class="service-card tilt-card">
+<lottie-player 
+  src="https://assets9.lottiefiles.com/packages/lf20_qp1q7mct.json"
+  background="transparent"
+  speed="1"
+  style="width: 90px; height: 90px; margin:auto;"
+  loop autoplay>
+</lottie-player>
+<h5>Invoicing Solutions</h5>
+<p>
+Advanced invoicing systems with GST support, automated billing, payment tracking, reports, and seamless integration with your business operations.
+</p>
+        </div>
+      </div>
+
+      <!-- Cloud -->
+      <div class="col-md-4">
+      
+        <div class="service-card tilt-card">
+        <lottie-player 
+  src="https://assets2.lottiefiles.com/packages/lf20_5ngs2ksb.json"
+  background="transparent"
+  speed="1"
+  style="width: 90px; height: 90px; margin:auto;"
+  loop autoplay>
+</lottie-player>
+         <h5>Maintenance & Support</h5>
+         <p>
+         End-to-end maintenance and support services ensuring your systems remain secure, updated, and high-performing with continuous monitoring, bug fixes, and technical assistance.
+         </p>
+        </div>
+      </div>
+
+      <!-- POS -->
+      <div class="col-md-4">
+<div class="service-card tilt-card">
+
+    <!-- LOTTIE -->
+    <lottie-player 
+  src="assets/lottie/Bancard POS.json"
+ background="transparent"
+  speed="1"
+  style="width: 90px; height: 90px; margin:auto;"
+  loop autoplay>
+</lottie-player>
+
+    <h5 class="mt-3">POS Systems</h5>
+
+    <p>
+      We provide smart Point of Sale (POS) systems for retail and businesses, 
+      including billing, inventory management, and secure payment integration 
+      to streamline daily operations.
+    </p>
+
+  </div>
+</div>
+
+      <!-- SEO -->
+      <div class="col-md-4">
+       
+       <div class="service-card tilt-card">
+          <lottie-player 
+  src="https://assets2.lottiefiles.com/packages/lf20_kxsd2ytq.json"
+  background="transparent"
+  speed="1"
+  style="width: 90px; height: 90px; margin:auto;"
+  loop autoplay>
+</lottie-player>
+          <h5>SEO Optimization</h5>
+          <p>Improve your website visibility on Google with our SEO services, 
+            including keyword research, on-page optimization, 
+            and performance tracking to boost traffic and rankings.</p>
+        </div>
+      </div>
+
+      <!-- Marketing -->
+      <div class="col-md-4">
+       
+     <div class="service-card tilt-card">
+          <lottie-player 
+  src="https://assets2.lottiefiles.com/packages/lf20_tno6cg2w.json"
+  background="transparent"
+  speed="1"
+  style="width: 85px; height: 85px; margin:auto;"
+  loop autoplay>
+</lottie-player>
+          <h5>Digital Marketing</h5>
+          <p>Grow your brand with result-driven digital marketing strategies including social 
+            media marketing, paid ads (Google & Meta), content marketing, and lead generation 
+            to increase visibility, traffic, and conversions.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+
+    <div class="row text-center text-md-start">
+
+  <!-- Company -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <h5 class="footer-title">Trustellar</h5>
+    <p class="footer-text">
+      Providing trusted and secure business solutions with modern IT services 
+      to help your business grow and succeed in the digital world.
+    </p>
+  </div>
+
+  <!-- Quick Links -->
+ <div class="col-lg-3 col-md-6 mb-4">
+  <h5 class="footer-title">Quick Links</h5>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</div>
+
+  <!-- 🔥 Our Offices (MOVED HERE) -->
+ <div class="col-lg-3 col-md-6 mb-4">
+    <h5 class="footer-title">Our Offices</h5>
+
+    <div class="office-item">
+      <i class="fas fa-building"></i>
+      <div>
+        <strong>Head Office</strong>
+        <p>Anand, Gujarat, India</p>
+      </div>
+    </div>
+
+    <div class="office-item mt-3">
+      <i class="fas fa-city"></i>
+      <div>
+        <strong>Regional Office</strong>
+        <p>Ahmedabad, Gujarat, India</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Connect -->
+ <div class="col-lg-3 col-md-6 mb-4">
+    <h5 class="footer-title">Connect With Us</h5>
+
+    <div class="footer-social">
+      <a href="https://www.facebook.com/people/Trustellar-Business-Solutions/61576449705542/" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+      
+      <a href="https://www.instagram.com/trustellarbusiness_solutions/" target="_blank">
+  <i class="fab fa-instagram"></i>
+</a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:info@trustellar.com">
+    <i class="fas fa-envelope"></i>
+  </a>
+    </div>
+
+    <p class="footer-contact mt-3">Info@trustellar-services.com</p>
+ 
+   
+  </div>
+
+</div>
+
+    <hr>
+
+    <!-- Bottom -->
+    <div class="text-center footer-bottom">
+      © 2026 Trustellar Business Solutions. All Rights Reserved
+    </div>
+
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script>
+const Cards = document.querySelectorAll(".tilt-card");
+
+cards.forEach(card => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = -(y - centerY) / 12;
+    const rotateY = (x - centerX) / 12;
+
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.03)
+    `;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(0deg)
+      rotateY(0deg)
+      scale(1)
+    `;
+  });
+});</script>
+
+
+</body>
+</html>

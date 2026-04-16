@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us - Trustellar</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* Base */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #eef6fb;
+}
+body {
+  padding-top: 90px;
+}
+
+.navbar {
+  background: white;
+  padding: 15px 0;
+}
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 2px 0;
+  transition: 0.3s;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Shadow on scroll */
+.custom-navbar.scrolled {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Nav links */
+.nav-link {
+  position: relative;
+  margin: 0 12px;
+  font-weight: 500;
+  color: #333 !important;
+  transition: 0.3s;
+}
+
+/* Underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+  transition: 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Hover color */
+.nav-link:hover {
+  color: #28a745 !important;
+}
+/* Logo spacing */
+.logo-img {
+  height: 85px;
+}
+
+/* Logo */
+.logo-img {
+  height: 90px;        /* increase size */
+  width: auto;         /* keep proportion */
+  object-fit: contain; /* no distortion */
+  
+}
+
+.brand-text {
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+
+  background-clip: text;              /* standard */
+  -webkit-background-clip: text;      /* chrome/safari */
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Nav */
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+}
+.contact-hero {
+  padding: 40px 0 30px;   /* 🔥 reduced top space */
+  margin-top: 60px;       /* keeps navbar gap */
+}
+
+/* Contact */
+/* ===== CONTACT SECTION ===== */
+
+.contact {
+  background: transparent;
+  padding: 100px 0;
+}
+
+.contact h2 {
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* FORM BOX */
+.contact form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+/* INPUTS */
+.contact .form-control {
+  border-radius: 12px;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+/* INPUT FOCUS */
+.contact .form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40,167,69,0.1);
+}
+
+/* BUTTON */
+.contact form button {
+  background: linear-gradient(45deg, #28a745, #17a2b8);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+  border: 2px solid #ffffff;
+}
+
+/* BUTTON HOVER */
+.contact form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* FORM HOVER */
+.contact form:hover {
+  transform: translateY(-5px);
+}
+
+/* MAP */
+.contact iframe {
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 100%;
+}
+
+/* CONTACT INFO */
+.contact-info {
+  margin-top: 25px;
+}
+
+/* INFO ITEMS */
+.contact-info p {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+/* ICONS */
+.contact-info i {
+  font-size: 18px;
+  color: #28a745;
+}
+/* Footer */
+/* ===== EXACT FOOTER CSS FROM ABOUT PAGE ===== */
+
+.footer {
+  background: #0d0d0d;
+  color: #ccc;
+  padding: 70px 0 30px;
+  position: relative;
+}
+
+/* Top gradient line */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+}
+
+/* Titles */
+.footer-title {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Text */
+.footer-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #28a745;
+  padding-left: 5px;
+}
+
+/* Social Icons */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;   /* 🔥 IMPORTANT */
+}
+
+.footer-social a {
+  display: inline-block;
+  margin-right: 12px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background: #1a1a1a;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  background: linear-gradient(45deg, #28a745, #ff9800);
+  transform: translateY(-3px);
+}
+
+/* Contact text */
+.footer-contact {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* Divider */
+.footer hr {
+  border-color: rgba(255,255,255,0.1);
+  margin: 30px 0;
+}
+
+/* Office items */
+.office-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.office-item i {
+  font-size: 22px;
+  color: #28a745;
+  margin-top: 5px;
+}
+
+.office-item strong {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+}
+
+.office-item p {
+  margin: 0;
+  font-size: 13px;
+  color: #bbb;
+}
+
+.office-item:hover {
+  transform: translateX(5px);
+  transition: 0.3s;
+}
+
+/* Column spacing */
+.footer .col-md-3 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Bottom */
+.footer-bottom {
+  font-size: 13px;
+  color: #888;
+}
+.title-line span {
+  animation: pulse 1.5s infinite;
+}
+/* Line */
+/* Line */
+.title-line {
+  position: relative;
+  width: 120px;
+  height: 5px;
+  background: #d4f5dd;
+  margin: -30px auto 0; /* 🔥 CHANGED from 15px → 5px */
+  border-radius: 10px;
+  overflow: hidden;
+}
+.why-line {
+  margin: 10px auto 0; /* 🔥 only this section changes */
+}
+/* Moving dot */
+.title-line span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  
+  width: 12px;      /* SAME width & height */
+  height: 12px;
+
+  background:  linear-gradient(45deg, #28a745, #17a2b8);
+  border-radius: 50%;  /* 🔥 THIS MAKES IT CIRCLE */
+
+  transform: translateY(-50%);
+  animation: moveDot 2s linear infinite;
+}
+
+
+/* Animation */
+@keyframes moveDot {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+    transform: translate(-100%, -50%);
+  }
+}
+/* Floating Shapes */
+.floating-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; /* 🔥 increase */
+}
+
+/* Base shape */
+.shape {
+  position: absolute;
+  opacity: 0.4;
+  animation: float 10s infinite ease-in-out;
+}
+
+/* Circle */
+.circle {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #ff7e5f, #feb47b);
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+}
+
+/* Cross */
+.cross {
+  width: 30px;
+  height: 30px;
+  top: 40%;
+  left: 30%;
+}
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  background: #00c9a7;
+}
+.cross::before {
+  width: 100%;
+  height: 3px;
+  top: 50%;
+}
+.cross::after {
+  height: 100%;
+  width: 3px;
+  left: 50%;
+}
+
+/* Triangle */
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid #00e676;
+  top: 20%;
+  right: 20%;
+}
+
+/* Ring */
+.ring {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #ccc;
+  border-radius: 50%;
+  bottom: 20%;
+  left: 50%;
+}
+/* Square */
+.shape.square {
+  width: 20px;
+  height: 20px;
+  background: #28a745;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  animation: float 8s infinite ease-in-out;
+}
+
+/* Diamond */
+.shape.diamond {
+  width: 20px;
+  height: 20px;
+  background: #17a2b8;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  animation: float 7s infinite ease-in-out;
+}
+
+/* Dot */
+.shape.dot {
+  width: 10px;
+  height: 10px;
+  background: #ffc107;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  animation: float 6s infinite ease-in-out;
+}
+
+/* Small Circle */
+.shape.small-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #6f42c1;
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  animation: float 9s infinite ease-in-out;
+}
+
+/* Plus */
+.shape.plus {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  font-size: 20px;
+  color: #20c997;
+  animation: float 8s infinite ease-in-out;
+}
+
+.shape.plus::before {
+  content: "+";
+}
+
+/* Zigzag */
+.shape.zigzag {
+  width: 30px;
+  height: 10px;
+  border-bottom: 3px solid #fd7e14;
+  transform: skewX(-30deg);
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  animation: float 10s infinite ease-in-out;
+}
+/* Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+  }
+}
+
+</style>
+</head>
+
+<body>
+ <!-- 🔥 FLOATING SHAPES (ADD HERE) -->
+<div class="floating-shapes">
+  <span class="shape circle"></span>
+  <span class="shape cross"></span>
+  <span class="shape triangle"></span>
+  <span class="shape ring"></span>
+  <span class="shape square"></span>
+  <span class="shape diamond"></span>
+  <span class="shape zigzag"></span>
+  <span class="shape dot"></span>
+  <span class="shape plus"></span>
+  <span class="shape small-circle"></span>
+</div>
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="image.png" class="logo-img" alt="logo">
+     
+    </a>
+
+    <!-- Toggle -->
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto text-center">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="services.html">Services</a>
+        </li>
+       
+
+        <li class="nav-item">
+          <a class="nav-link active" href="contact.html">Contact</a>
+         
+          
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+<!-- HERO -->
+
+<!-- Contact -->
+<section id="contact" class="contact text-center scroll-animate">
+<div class="container">
+
+  <h2>Let’s Connect & Grow Together</h2>
+  <div class="title-line">
+        <span></span>
+      </div>
+
+  <div class="row mt-4">
+
+    <div class="col-md-6">
+      <div class="p-4 bg-white rounded shadow-sm">
+
+      <form onsubmit="sendMail(event)">
+
+<input type="text" id="name" class="form-control mb-1" placeholder="Your Name" required>
+<small class="error" id="nameError"></small>
+
+<input type="email" id="email" class="form-control mb-1" placeholder="Your Email" required>
+<small class="error" id="emailError"></small>
+
+<input type="tel" id="phone" class="form-control mb-1" placeholder="Your Contact Number" required>
+<small class="error" id="phoneError"></small>
+
+<textarea id="message" class="form-control mb-1" rows="4" placeholder="Message" required></textarea>
+<small class="error" id="messageError"></small>
+
+<button class="btn btn-main w-100">Send Message</button>
+
+</form>
+
+      </div>
+
+      <!-- ✅ UPDATED CONTACT INFO -->
+      <div class="mt-3 contact-info">
+        <p><i class="fas fa-envelope"></i> Info@trustellar-services.com </p>
+        <p><i class="fab fa-whatsapp"></i> +91 98765 43210</p>
+        <p><i class="fas fa-map-marker-alt"></i> Anand, Gujarat, India</p>
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+      <iframe width="100%" height="300"
+        src="https://www.google.com/maps?q=EDInvosync%20Gujarat&output=embed"></iframe>
+        
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+
+    <div class="row text-center text-md-start">
+
+      <!-- Company -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="footer-title">Trustellar</h5>
+        <p class="footer-text">
+          Providing trusted and secure business solutions with modern IT services 
+          to help your business grow and succeed in the digital world.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Offices -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="footer-title">Our Offices</h5>
+
+        <div class="office-item">
+          <i class="fas fa-building"></i>
+          <div>
+            <strong>Head Office</strong>
+            <p>Anand, Gujarat, India</p>
+          </div>
+        </div>
+
+        <div class="office-item mt-3">
+          <i class="fas fa-city"></i>
+          <div>
+            <strong>Regional Office</strong>
+            <p>Ahmedabad, Gujarat, India</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connect -->
+ <div class="col-lg-3 col-md-6 mb-4">
+    <h5 class="footer-title">Connect With Us</h5>
+
+    <div class="footer-social">
+      <a href="https://www.facebook.com/people/Trustellar-Business-Solutions/61576449705542/" target="_blank">
+  <i class="fab fa-facebook-f"></i>
+</a>
+
+      
+      <a href="https://www.instagram.com/trustellarbusiness_solutions/" target="_blank">
+  <i class="fab fa-instagram"></i>
+</a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:info@trustellar.com">
+    <i class="fas fa-envelope"></i>
+  </a>
+    </div>
+
+    <p class="footer-contact mt-3">Info@trustellar-services.com</p>
+  </div>
+
+</div>
+
+    <hr>
+
+    <!-- Bottom -->
+    <div class="text-center footer-bottom">
+      © 2026 Trustellar Business Solutions. All Rights Reserved
+    </div>
+
+    
+
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function sendMail(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value; // ✅ added
+  const message = document.getElementById("message").value;
+fetch("http://localhost:5000/send", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ name, email, phone, message })
+})
+.then(res => res.json()) // ✅ IMPORTANT FIX
+.then(data => {
+  alert("Message Sent Successfully ✅");
+})
+.catch(err => {
+  console.log(err);
+  alert("Error sending message ❌");
+});
+  
+}
+</script>
+
+
+<script>
+const cards = document.querySelectorAll(".tilt-card");
+
+cards.forEach(card => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = -(y - centerY) / 10;
+    const rotateY = (x - centerX) / 10;
+
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.03)
+    `;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(0deg)
+      rotateY(0deg)
+      scale(1)
+    `;
+  });
+});
+</script>
+
+</body>
+</html>
