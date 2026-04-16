@@ -744,12 +744,17 @@ function sendMail(e) {
   const email = document.getElementById("email").value;
   const phone = document.getElementById("phone").value; // ✅ added
   const message = document.getElementById("message").value;
-fetch("http://localhost:5000/send", {
+fetch("https://tbs-backend.vercel.app/api/send", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
   },
-  body: JSON.stringify({ name, email, phone, message })
+  body: JSON.stringify({
+    name,
+    email,
+    phone,
+    message
+  })
 })
 .then(res => res.json()) // ✅ IMPORTANT FIX
 .then(data => {
