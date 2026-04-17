@@ -294,9 +294,7 @@ html {
 .service-card:hover::before {
   width: 80px;
 }
-.row.g-4 > div {
-  display: flex;
-}
+
 .service-card {
   display: flex;
   flex-direction: column;
@@ -560,11 +558,7 @@ html {
   border-color: rgba(255,255,255,0.1);
   margin: 30px 0;
 }
-.footer .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+
 .footer-social {
   display: flex;
   align-items: center;
@@ -618,6 +612,12 @@ html {
 .tilt-card i {
   transform: translateZ(30px);
 }
+.office-item {
+  display: flex;
+  flex-direction: row;      /* 🔥 restore desktop */
+  align-items: flex-start;
+  text-align: left;
+}
 /* ================= MOBILE OPTIMIZATION ================= */
 @media (max-width: 768px) {
 
@@ -661,7 +661,8 @@ html {
     gap: 12px;
   }
 
-  .btn-main, .btn-outline {
+  .btn-main,
+  .btn-outline {
     width: 100%;
     padding: 12px;
   }
@@ -730,7 +731,23 @@ html {
   .footer .col-lg-3 {
     margin-bottom: 25px;
   }
+
+  .office-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .office-item i {
+    margin-bottom: 8px;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
 }
+
 button, a {
   -webkit-tap-highlight-color: transparent;
 }
@@ -746,7 +763,7 @@ button, a {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1; /* 🔥 increase */
+  z-index: 0; /* 🔥 increase */
 }
 
 /* Base shape */
@@ -910,7 +927,7 @@ section, .container, .navbar {
 
 body > *:not(.floating-shapes) {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 
@@ -950,6 +967,7 @@ body > *:not(.floating-shapes) {
 }
 
 
+
 /* Animation */
 @keyframes moveDot {
   0% {
@@ -960,6 +978,7 @@ body > *:not(.floating-shapes) {
     transform: translate(-100%, -50%);
   }
 }
+
 
 </style>
 </head>
