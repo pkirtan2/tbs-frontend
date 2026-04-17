@@ -301,9 +301,9 @@ padding: 50px 0 30px;
 .footer-social {
   display: flex;
   align-items: center;
-  justify-content: center;  /* center on mobile */
+  justify-content: center;   /* center by default */
   gap: 12px;
-  flex-wrap: wrap;          /* 🔥 allow wrapping */
+  flex-wrap: wrap;           /* allow wrapping on small screens */
 }
 /* Divider */
 .footer hr {
@@ -952,33 +952,41 @@ body > *:not(.floating-shapes) {
 .team-card:hover .team-inner {
   transform: rotateY(180deg);
 }
-/* ================= ABOUT PAGE MOBILE FIX ================= */
 @media (max-width: 768px) {
 
-  /* Fix layout stacking */
-  .about-section .row {
-    flex-direction: column !important;
+  .footer {
+    padding: 50px 0 20px; /* reduce vertical gap */
+    text-align: center;
   }
 
-  /* Fix spacing */
-  .about-img {
-    margin-top: 20px;
+  .footer .col-lg-3 {
+    margin-bottom: 30px; /* better spacing between sections */
   }
 
-  .history-box {
-    margin-top: 20px;
+  .footer-title {
+    margin-bottom: 12px;
   }
 
-  /* Fix text */
-  .about-text p {
-    text-align: left !important;
+  .footer-links li {
+    margin-bottom: 6px;
   }
 
-  /* Fix cards spacing */
-  .about-box {
-    margin-bottom: 20px;
+  .office-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
+  .office-item i {
+    margin-bottom: 5px;
+  }
+
+}
+@media (min-width: 769px) {
+  .footer-social {
+    justify-content: flex-start;  /* left align on desktop */
+    flex-wrap: nowrap;            /* single line on desktop */
+  }
 }
 
 </style>
