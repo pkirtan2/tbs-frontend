@@ -986,7 +986,181 @@ body > *:not(.floating-shapes) {
   }
 }
 
+.offer-timeline {
+  padding: 120px 0;
+  background: #f8fbff;
+}
 
+/* Timeline line */
+.timeline {
+  position: relative;
+  margin-top: 60px;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 60px;
+}
+
+/* Center vertical line */
+.timeline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #28a745, #ff9800);
+  z-index: 1; /* 🔥 IMPORTANT */
+}
+
+/* Items */
+.timeline-item {
+  width: 50%;
+  padding: 25px 40px;
+  position: relative;
+}
+
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+
+/* Dot */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #28a745;
+  border-radius: 50%;
+  top: 30px;
+  z-index: 3; /* above line */
+}
+
+/* Left side dot */
+.timeline-item.left::before {
+  right: -7px;
+}
+
+/* Right side dot */
+.timeline-item.right::before {
+  left: -7px;
+}
+.timeline::after {
+  box-shadow: 0 0 8px rgba(40,167,69,0.3);
+}
+
+/* Card */
+.timeline-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #eee;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  transition: 0.3s;
+  position: relative;
+}
+
+/* Icon circle */
+.icon {
+  width: 55px;
+  height: 55px;
+  background: #f0f7f3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon i {
+  color: #28a745;
+  font-size: 20px;
+}
+
+/* Text */
+.timeline-content h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.timeline-content p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Gradient top bar */
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+  border-radius: 10px;
+}
+
+/* Hover */
+.timeline-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .timeline::after { left: 10px; }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 35px;
+  }
+
+  .timeline-item.right { left: 0; }
+
+  .timeline-item::before { left: 0; }
+}
+.timeline-content:hover .icon {
+  background: linear-gradient(45deg, #28a745, #ff9800);
+}
+
+.timeline-content:hover .icon i {
+  color: #fff;
+}
+.timeline-content {
+  position: relative;
+  z-index: 2; /* above line */
+}
+/* Hidden initially */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.7s ease;
+}
+
+/* When visible */
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: left & right direction effect */
+.timeline-item.left {
+  transform: translateX(-60px);
+}
+
+.timeline-item.right {
+  transform: translateX(60px);
+}
+
+.timeline-item.show.left,
+.timeline-item.show.right {
+  transform: translateX(0);
+}
 </style>
 </head>
 
@@ -1172,7 +1346,89 @@ body > *:not(.floating-shapes) {
 
   </div>
 </section>
+<section class="offer-timeline">
+  <div class="container text-center">
 
+    <h2 class="why-title">What We Offer</h2>
+    <p class="why-subtitle">
+      Powerful solutions crafted to grow your business
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <div class="icon"><i class="fas fa-code"></i></div>
+          <div class="text">
+            <h5>Web Development</h5>
+            <p>Modern, responsive & scalable websites for your business.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <div class="icon"><i class="fas fa-cash-register"></i></div>
+          <div class="text">
+            <h5>POS Systems</h5>
+            <p>Smart billing, inventory & payment solutions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item left">
+  <div class="timeline-content">
+    <div class="icon"><i class="fas fa-credit-card"></i></div>
+    <div class="text">
+      <h5>Payment Processing</h5>
+      <p>Secure, fast & reliable payment gateway solutions with seamless transaction handling.</p>
+    </div>
+  </div>
+</div>
+
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <div class="icon"><i class="fas fa-chart-line"></i></div>
+          <div class="text">
+            <h5>SEO Optimization</h5>
+            <p>Improve visibility, rankings & website traffic.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <div class="icon"><i class="fas fa-bullhorn"></i></div>
+          <div class="text">
+            <h5>Digital Marketing</h5>
+            <p>Grow your brand with result-driven strategies.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <div class="icon"><i class="fas fa-file-invoice"></i></div>
+          <div class="text">
+            <h5>Invoicing Solutions</h5>
+            <p>GST billing, reports & automation systems.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <div class="icon"><i class="fas fa-headset"></i></div>
+          <div class="text">
+            <h5>Maintenance & Support</h5>
+            <p>24/7 support, updates & performance monitoring.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
@@ -1324,6 +1580,39 @@ cards.forEach(card => {
     `;
   });
 });
+</script>
+<script id="animjs">
+const items = document.querySelectorAll(".timeline-item");
+
+window.addEventListener("scroll", () => {
+  items.forEach(item => {
+    const top = item.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      item.classList.add("show");
+    }
+  });
+});
+</script>
+<script>
+const timelineItems = document.querySelectorAll(".timeline-item");
+
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  timelineItems.forEach((item, index) => {
+    const itemTop = item.getBoundingClientRect().top;
+
+    if (itemTop < triggerBottom) {
+      // Delay for "one by one" effect
+      setTimeout(() => {
+        item.classList.add("show");
+      }, index * 150);
+    }
+  });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 </script>
 
 </body>
