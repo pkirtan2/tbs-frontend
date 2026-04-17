@@ -301,8 +301,9 @@ padding: 50px 0 30px;
 .footer-social {
   display: flex;
   align-items: center;
+  justify-content: center;  /* center on mobile */
   gap: 12px;
-  flex-wrap: nowrap;   /* 🔥 keeps all icons in one row */
+  flex-wrap: wrap;          /* 🔥 allow wrapping */
 }
 /* Divider */
 .footer hr {
