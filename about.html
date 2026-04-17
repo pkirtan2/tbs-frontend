@@ -179,7 +179,7 @@ padding: 50px 0 30px;
   position: relative;
 }
 .history-box {
-  margin-top: 100px; /* 🔥 only this card moves down */
+  margin-top: 40px; /* 🔥 only this card moves down */
 }
 
 /* Gradient border top */
@@ -830,7 +830,7 @@ section, .container, .navbar {
 
 body > *:not(.floating-shapes) {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 .shape {
   opacity: 0.6; /* increase */
@@ -950,29 +950,34 @@ body > *:not(.floating-shapes) {
 .team-card:hover .team-inner {
   transform: rotateY(180deg);
 }
-/* 🔥 MOBILE FIX ONLY */
+/* ================= ABOUT PAGE MOBILE FIX ================= */
 @media (max-width: 768px) {
 
-  .footer {
-    text-align: center;
+  /* Fix layout stacking */
+  .about-section .row {
+    flex-direction: column !important;
   }
 
-  .office-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  /* Fix spacing */
+  .about-img {
+    margin-top: 20px;
   }
 
-  .office-item i {
-    margin-bottom: 8px;
+  .history-box {
+    margin-top: 20px;
   }
 
-  .footer-social {
-    justify-content: center;
+  /* Fix text */
+  .about-text p {
+    text-align: left !important;
+  }
+
+  /* Fix cards spacing */
+  .about-box {
+    margin-bottom: 20px;
   }
 
 }
-
 
 </style>
 
