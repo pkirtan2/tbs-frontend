@@ -24,7 +24,16 @@ body {
 
 .navbar {
   background: white;
-  padding: 15px 0;
+  padding: 0;
+}
+.navbar-toggler {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 .custom-navbar {
   background: rgba(255, 255, 255, 0.8);
@@ -979,6 +988,26 @@ body > *:not(.floating-shapes) {
 
   .office-item i {
     margin-bottom: 5px;
+  }
+  .custom-navbar {
+    padding: 6px 0 !important;
+  }
+
+  .navbar-collapse {
+    background: white;
+    padding: 15px 0;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  .navbar {
+    min-height: 70px;
+  }
+  .custom-navbar {
+    padding: 6px 0 !important;
+  }
+
+  .logo-img {
+    height: 55px !important;
   }
 
 }
