@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us - Trustellar</title>
 
 <!-- Bootstrap -->
@@ -20,9 +21,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background: #eef6fb;
 }
-body {
-  padding-top: 90px;
-}
+
 
 .navbar {
   background: white;
@@ -257,23 +256,45 @@ body {
 .footer-social {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
-  flex-wrap: nowrap;   /* 🔥 IMPORTANT */
+  flex-wrap: wrap;
+}
+@media (min-width: 769px) {
+  .footer-social {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+  
 }
 
 .footer-social a {
-  display: inline-block;
-  margin-right: 12px;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
+  display: flex;                 /* ✅ FIX */
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
   border-radius: 50%;
   background: #1a1a1a;
   color: #fff;
+
+  font-size: 16px;
   transition: 0.3s;
 }
+.footer-social a i {
+  display: block;        /* 🔥 FIX */
+  line-height: 1;
+}
+.footer-social a {
+  text-decoration: none !important;
+}
 
+.footer-social a::after {
+  display: none !important;
+  content: none !important;
+}
 .footer-social a:hover {
   background: linear-gradient(45deg, #28a745, #ff9800);
   transform: translateY(-3px);
@@ -521,6 +542,10 @@ body {
   left: 50%;
   animation: float 10s infinite ease-in-out;
 }
+body > *:not(.floating-shapes) {
+  position: relative;
+  z-index: 1;
+}
 /* Animation */
 @keyframes float {
   0% {
@@ -532,6 +557,49 @@ body {
   100% {
     transform: translateY(0px) rotate(360deg);
   }
+}
+@media (max-width: 768px) {
+
+  .footer {
+    text-align: center;
+    padding: 50px 0 20px;
+  }
+
+  .footer .row {
+    gap: 25px;
+  }
+
+  .footer .col-lg-3,
+  .footer .col-md-6 {
+    margin-bottom: 20px;
+  }
+
+  /* Center office items */
+  .office-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .office-item i {
+    margin-bottom: 8px;
+  }
+
+  /* Center links */
+  .footer-links {
+    text-align: center;
+  }
+
+  /* Social icons perfect */
+  .footer-social {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .footer-contact {
+    text-align: center;
+  }
+
 }
 
 </style>
