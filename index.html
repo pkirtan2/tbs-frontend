@@ -1051,39 +1051,71 @@ body > *:not(.floating-shapes) {
 }
 
 /* Card */
+/* Card */
 .timeline-content {
   display: flex;
   align-items: center;
   gap: 15px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 14px;
-  border: 1px solid #eee;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-  transition: 0.3s;
+  padding: 22px 25px;
+  border-radius: 18px;
   position: relative;
+  overflow: hidden;
+
+  /* ✅ soft green + grey tint (not dark, not white) */
+  background: linear-gradient(135deg, #eef6f1, #e7f1ec);
+
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: all 0.35s ease;
+}
+/* Top gradient accent */
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 50px;
+  height: 4px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #28a745, #ff9800);
+  transition: 0.3s;
+}
+
+/* Soft background glow */
+.timeline-content::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(40,167,69,0.08), transparent);
+  top: -20%;
+  left: -10%;
+  opacity: 0;
+  transition: 0.3s;
 }
 
 /* Icon circle */
 .icon {
   width: 55px;
   height: 55px;
-  background: #f0f7f3;
+  background: linear-gradient(135deg, #eaf7f0, #fdf4e8);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: 0.3s;
 }
 
 .icon i {
-  color: #28a745;
   font-size: 20px;
+  color: #28a745;
+  transition: 0.3s;
 }
 
 /* Text */
 .timeline-content h5 {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   margin-bottom: 4px;
 }
@@ -1091,24 +1123,32 @@ body > *:not(.floating-shapes) {
 .timeline-content p {
   font-size: 13px;
   color: #666;
+  line-height: 1.5;
 }
 
-/* Gradient top bar */
-.timeline-content::before {
-  content: "";
-  position: absolute;
-  top: 12px;
-  left: 20px;
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(45deg, #28a745, #ff9800);
-  border-radius: 10px;
-}
-
-/* Hover */
+/* Hover effect */
 .timeline-content:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* Animate gradient line */
+.timeline-content:hover::before {
+  width: 90px;
+}
+
+/* Glow on hover */
+.timeline-content:hover::after {
+  opacity: 1;
+}
+
+/* Icon animation */
+.timeline-content:hover .icon {
+  background: linear-gradient(45deg, #28a745, #ff9800);
+}
+
+.timeline-content:hover .icon i {
+  color: #fff;
 }
 
 /* Mobile */
@@ -1160,6 +1200,47 @@ body > *:not(.floating-shapes) {
 .timeline-item.show.left,
 .timeline-item.show.right {
   transform: translateX(0);
+}
+.offer-timeline {
+  padding: 120px 0;
+  background: radial-gradient(circle at top left, rgba(40,167,69,0.12), transparent),
+              radial-gradient(circle at bottom right, rgba(255,152,0,0.12), transparent),
+              #f9fbfd;
+}
+/* Common style */
+.offer-timeline::before,
+.offer-timeline::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: floatMove 8s ease-in-out infinite;
+}
+
+/* Green circle */
+.offer-timeline::before {
+  width: 250px;
+  height: 250px;
+  background: #28a745;
+  top: -60px;
+  left: -60px;
+}
+
+/* Orange circle */
+.offer-timeline::after {
+  width: 200px;
+  height: 200px;
+  background: #ff9800;
+  bottom: -60px;
+  right: -60px;
+  animation-delay: 2s;
+}
+
+/* Floating animation */
+@keyframes floatMove {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(20px); }
+  100% { transform: translateY(0px); }
 }
 </style>
 </head>
@@ -1350,6 +1431,9 @@ body > *:not(.floating-shapes) {
   <div class="container text-center">
 
     <h2 class="why-title">What We Offer</h2>
+     <div class="title-line why-line">
+        <span></span>
+      </div>
     <p class="why-subtitle">
       Powerful solutions crafted to grow your business
     </p>

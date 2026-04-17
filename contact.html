@@ -608,6 +608,32 @@ body > *:not(.floating-shapes) {
   }
 
 }
+.select-wrapper {
+  position: relative;
+}
+
+/* Remove default arrow */
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 40px; /* space for icon */
+  cursor: pointer;
+}
+
+/* RIGHT CORNER ICON */
+.select-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 14px;
+  pointer-events: none;
+}
+select:invalid {
+  color: #6c757d; /* same as placeholder */
+}
 
 </style>
 </head>
@@ -696,6 +722,23 @@ body > *:not(.floating-shapes) {
 
 <input type="tel" id="phone" class="form-control mb-1" placeholder="Your Contact Number" required>
 <small class="error" id="phoneError"></small>
+<!-- 🔥 NEW DROPDOWN -->
+<div class="select-wrapper">
+  <select id="source" class="form-control mb-1 custom-select" required>
+   <option value="" disabled selected hidden>How did you hear about us?</option>
+    <option>Referral</option>
+    <option>Web</option>
+    <option>Email</option>
+    <option>Social Media</option>
+    <option>Direct Email</option>
+    <option>Trade Show</option>
+    <option>Other</option>
+  </select>
+
+  <!-- Arrow Icon -->
+  <i class="fas fa-chevron-down select-icon"></i>
+</div>
+
 
 <textarea id="message" class="form-control mb-1" rows="4" placeholder="Message" required></textarea>
 <small class="error" id="messageError"></small>
@@ -818,18 +861,20 @@ function sendMail(e) {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const phone = document.getElementById("phone").value; // ✅ added
+    const source = document.getElementById("source").value;
   const message = document.getElementById("message").value;
 fetch("https://tbs-backend-3242.vercel.app/api/send", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
   },
-  body: JSON.stringify({
-    name,
-    email,
-    phone,
-    message
-  })
+ body: JSON.stringify({
+  name,
+  email,
+  phone,
+  message,
+  source   // 🔥 THIS MUST BE HERE
+})
 })
 .then(res => res.json()) // ✅ IMPORTANT FIX
 .then(data => {
