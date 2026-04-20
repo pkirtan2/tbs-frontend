@@ -28,6 +28,11 @@ body {
   background-size: 600% 600%;
   animation: gradientMove 12s ease infinite;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
 /* Animation */
 @keyframes gradientMove {
@@ -1235,6 +1240,42 @@ body > *:not(.floating-shapes) {
   right: -60px;
   animation-delay: 2s;
 }
+.reviews-section {
+  padding: 80px 0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.review-card {
+  max-width: 700px;
+  margin: auto;
+  padding: 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  border-top: 5px solid #28a745;
+}
+
+.review-text {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #444;
+  margin: 20px 0;
+}
+
+.stars {
+  color: #ff9800;
+  font-size: 1.1rem;
+}
+
+.client-name {
+  font-weight: 700;
+  color: #333;
+}
+
+/* Control arrows color */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  filter: invert(1) grayscale(100%) brightness(0.5);
+}
 
 /* Floating animation */
 @keyframes floatMove {
@@ -1513,6 +1554,40 @@ body > *:not(.floating-shapes) {
 
   </div>
 </section>
+<section class="reviews-section scroll-animate">
+  <div class="container text-center">
+    <h2 class="why-title">What Our Clients Say</h2>
+     <div class="title-line why-line"><span></span></div>
+      <p class="why-subtitle">Real feedback from businesses we've empowered</p>
+    </div>
+
+    
+    <div id="reviewCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="review-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">"The AI-driven POS system transformed our liquor store operations. The sales forecasting is a game-changer!"</p>
+            <h5 class="client-name">- John D., Liquor Store Owner</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="review-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="review-text">"Reliable and secure payment processing. Trustellar's support team is always there when we need them."</p>
+            <h5 class="client-name">- Sarah M., Retail Manager</h5>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
@@ -1698,6 +1773,13 @@ const revealOnScroll = () => {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 </script>
+<script>// Existing carousel logic plus the new review slider
+const reviewCarousel = document.querySelector('#reviewCarousel');
+new bootstrap.Carousel(reviewCarousel, {
+  interval: 5000, // Changes review every 5 seconds
+  ride: 'carousel',
+  pause: 'hover'
+});</script>
 
 </body>
 </html>
