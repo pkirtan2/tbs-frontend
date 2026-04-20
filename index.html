@@ -1277,11 +1277,47 @@ body > *:not(.floating-shapes) {
   filter: invert(1) grayscale(100%) brightness(0.5);
 }
 
+
 /* Floating animation */
 @keyframes floatMove {
   0%   { transform: translateY(0px); }
   50%  { transform: translateY(20px); }
   100% { transform: translateY(0px); }
+}
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 60px 20px; /* Reduces side padding on mobile */
+  }
+
+  .review-card {
+    padding: 30px 20px; /* Smaller padding inside the card */
+    margin: 10px; /* Ensures card doesn't touch screen edges */
+    border-radius: 15px;
+  }
+
+  .review-text {
+    font-size: 1rem; /* Slightly smaller text for better fit */
+    line-height: 1.5;
+  }
+
+  /* Fixes the side-by-side issue if you used columns */
+  .row > [class*='col-'] {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  /* Makes the title fit on small screens */
+  .why-title {
+    font-size: 1.8rem;
+    padding: 0 10px;
+  }
+
+  /* Hide the side arrows on mobile to save space */
+  .carousel-control-prev, 
+  .carousel-control-next {
+    display: none;
+  }
 }
 </style>
 </head>
